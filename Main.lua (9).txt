@@ -27,7 +27,7 @@ local Settings = ({
 	ChatPrefix = ("!"),
 	Seperator = (","),
 	Version = ("1.2"),
-	CustomUI = (Cmd().CustomUI or "rbxassetid://12557003051"),
+	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
 	Waypoints = ({}),
