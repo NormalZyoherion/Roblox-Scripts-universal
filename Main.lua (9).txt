@@ -10776,8 +10776,8 @@ Command.Add({
 })
 
 Command.Add({
-	Aliases = { "fly2", "mfly", "mobilefly" },
-	Description = "Opens Dex Explorer - by Moon",
+	Aliases = { "fly2", "mfly" },
+	Description = "mobile fly gui",
 	Arguments = {},
 	Task = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/Roblox-Scripts-universal/refs/heads/main/fly.obfuscated.lua%20(1).txt"))();
