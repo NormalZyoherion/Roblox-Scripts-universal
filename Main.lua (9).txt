@@ -27,7 +27,7 @@ local Settings = ({
 	ChatPrefix = ("!"),
 	Seperator = (","),
 	Version = ("1.2"),
-	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
+	CustomUI = (Cmd().CustomUI or "rbxassetid://12557003051"),
 
 	Aliases = ({}),
 	Waypoints = ({}),
@@ -41,7 +41,7 @@ local Settings = ({
 	}),
 
 	Theme = ({
-		Mode = "Dark",
+		Mode = "Void",
 		Transparency = 0,
 
 		-- Frames:
