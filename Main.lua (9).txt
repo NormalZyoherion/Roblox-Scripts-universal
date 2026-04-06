@@ -328,6 +328,21 @@ local CommandBar = UI.Cmd.CommandBar
 local Tab = UI.Tab
 local Button = UI.OpenButton
 
+local Button = UI.OpenButton
+
+
+local ButtonText = Button:FindFirstChildOfClass("TextLabel") or Button:FindFirstChild("Text")
+if ButtonText then
+    ButtonText.Text = "GRAPE"  -
+
+for _, child in pairs(Button:GetDescendants()) do
+    if child:IsA("TextLabel") or child:IsA("TextButton") then
+        if child.Text == "CMD" or child.Text == "Cmd" or child.Text == "cmd" then
+            child.Text = "GRAPE" 
+        end
+    end
+end
+
 local Components = Assets.Components
 local Features = Assets.Features
 
