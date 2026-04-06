@@ -10767,7 +10767,7 @@ Command.Add({
 })
 
 Command.Add({
-	Aliases = { "movement", "userchanger" },
+	Aliases = { "movement", "changergui" },
 	Description = "Opens Walkspeed etc changer",
 	Arguments = {},
 	Task = function()
@@ -10776,7 +10776,7 @@ Command.Add({
 })
 
 Command.Add({
-	Aliases = { "fly2", "mfly" },
+	Aliases = { "flygui", "mfly" },
 	Description = "mobile fly gui",
 	Arguments = {},
 	Task = function()
@@ -11088,7 +11088,7 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome, to kyoto admin",
+	Title = "Welcome, To Kyoto Admin",
 	Description = Format(
 		"Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
