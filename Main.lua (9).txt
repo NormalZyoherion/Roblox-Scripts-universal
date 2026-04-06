@@ -10766,6 +10766,24 @@ Command.Add({
 	end,
 })
 
+Command.Add({
+	Aliases = { "movement", "userchanger" },
+	Description = "Opens Walkspeed etc changer",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/Roblox-Scripts-universal/refs/heads/main/noclip.txt.txt"))();
+	end,
+})
+
+Command.Add({
+	Aliases = { "fly2", "mfly", "mobilefly" },
+	Description = "Opens Dex Explorer - by Moon",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/Roblox-Scripts-universal/refs/heads/main/fly.obfuscated.lua%20(1).txt"))();
+	end,
+})
+
 -- :: SETUP :: --
 if (Check("File")) then
 	local LoadedPlugins = (0);
@@ -11070,14 +11088,14 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome (NEW UPDATE)",
+	Title = "Welcome, to kyoto admin",
 	Description = Format(
 		"Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
 		Settings.Version,
 		Settings.Prefix,
 		Settings.ChatPrefix,
-		"discord.gg/pBDqEj4BSP"
+		"dsc.gg/kyotoxadminx"
 	),
 	Duration = 15,
 	Type = "Info",
