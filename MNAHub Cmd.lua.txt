@@ -62,7 +62,7 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("6.7"),
+	Version = ("1.0.0"),
 	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
@@ -76,30 +76,30 @@ local Settings = ({
 		["PlayerRemoved"] = ({}),
 	}),
 
-	Theme = ({
-	     Mode = "Dark",
-	    Transparency = 0,
+Theme = ({
+    Mode = "Dark",
+    Transparency = 0,
 
-	    -- Frames:
-	    Primary = Color3.fromRGB(7, 127, 253),     -- Fundo principal (AGORA É AZUL!)
-	    Secondary = Color3.fromRGB(10, 80, 180),   -- Fundo secundário (azul mais escuro)
-	    Actions = Color3.fromRGB(5, 60, 140),      -- Botões de ação
-	    Component = Color3.fromRGB(8, 70, 160),    -- Componentes
-	    Highlight = Color3.fromRGB(7, 127, 253),   -- Cor de destaque (mesmo azul)
-	    ScrollBar = Color3.fromRGB(3, 40, 100),    -- Barra de rolagem
+    -- Frames (Base: Black with Green tint)
+    Primary = Color3.fromRGB(10, 10, 10),         -- Near black
+    Secondary = Color3.fromRGB(18, 22, 18),       -- Black with green tint
+    Actions = Color3.fromRGB(30, 35, 30),        -- Dark gray-green
+    Component = Color3.fromRGB(15, 15, 15),       -- Dark gray
+    Highlight = Color3.fromRGB(0, 255, 127),     -- Spring green (bright accent)
+    ScrollBar = Color3.fromRGB(50, 50, 50),       -- Gray
 
-	    -- Text:
-	    Title = Color3.fromRGB(255, 255, 255),     -- Título branco (contrasta com azul)
-	    Description = Color3.fromRGB(200, 220, 255), -- Descrição azul clarinho
+    -- Text (White)
+    Title = Color3.fromRGB(255, 255, 255),        -- White
+    Description = Color3.fromRGB(180, 180, 180), -- Light gray
 
-	    -- Outlines:
-	    Shadow = Color3.fromRGB(0, 0, 0),          -- Sombra preta
-	    Outline = Color3.fromRGB(5, 60, 140),      -- Borda azul escuro
+    -- Outlines
+    Shadow = Color3.fromRGB(0, 0, 0),             -- Black
+    Outline = Color3.fromRGB(0, 200, 100),        -- Green outline
 
-	    -- Image:
-	    Icon = Color3.fromRGB(255, 255, 255),      -- Ícones brancos
+    -- Image/Icons
+    Icon = Color3.fromRGB(0, 255, 127),           -- Spring green icons
 }),
-
+	
 	Toggles = ({
 		FillCap = true,
 		Developer = false,
@@ -3325,14 +3325,12 @@ end
 
 -- ========== MNAHub SCRIPT HUB ==========
 local ScriptHub = {
-    { Name = "Solara Hub", Description = "+150 scripts | +500 jogos", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua"))()' },
-    { Name = "Arsenal OP", Description = "Script leve para Arsenal", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vylerascripts/vylera-scripts/main/arsenal2.lua"))()' },
-    { Name = "Cmd Original", Description = "Script original do lxte", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/main.lua"))()' },
-    { Name = "Piano OP", Description = "Script de piano poderoso", LoadString = 'pcall(function() loadstring(game:HttpGet("https://hellohellohell0.com/talentless-raw/TALENTLESS.lua", true))() end)' },
-    { Name = "Plutonium AA", Description = "Vários scripts para vários jogos", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/refs/heads/main/Versions%202/V3.8.0.txt", true))()' },
+    { Name = "Solara Hub", Description = "+150 scripts", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua"))()' },
+    { Name = "Arsenal", Description = "Script for Arsenal", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vylerascripts/vylera-scripts/main/arsenal2.lua"))()' },
+    { Name = "Piano OP", Description = "Script PIANOOOOO", LoadString = 'pcall(function() loadstring(game:HttpGet("https://hellohellohell0.com/talentless-raw/TALENTLESS.lua", true))() end)' },
+    { Name = "Plutonium AA", Description = "UMM JogOs?", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/refs/heads/main/Versions%202/V3.8.0.txt", true))()' },
     { Name = "Nexus Fruits", Description = "Script leve para Blox Fruits", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/tgferrmonitor/NexusFruitsHub/main/Main.lua"))()' },
     { Name = "StarHack Piggy", Description = "Script OP para Piggy", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/StarHackScripts/StarHack-Hub-Deepstar-Hub/refs/heads/main/StarHackHub_PiggyV2release"))()' },
-    { Name = "MNAHub", Description = "MNAHub Unmaintained", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/mna8266/mnahub-project/refs/heads/main/MNAHubUnmain.lua"))()' },
     { Name = "4479Hub", Description = "4479Hub - Blox Fruits", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/4479cantcode/4479Hub/refs/heads/main/Script.lua"))()' },
 }
 
@@ -3343,10 +3341,10 @@ local function OpenScriptHub()
         return
     end
     
-    local Window = Library:CreateWindow({ Title = "MNAHub Scripts" })
+    local Window = Library:CreateWindow({ Title = "Scripts" })
     ScriptHubWindow = Window
     
-    Window:AddSection({ Title = "📦 SCRIPTS DISPONÍVEIS", Tab = "Home" })
+    Window:AddSection({ Title = "SCRIPTS", Tab = "Home" })
     
     for _, Script in ipairs(ScriptHub) do
         Window:AddButton({
@@ -3354,16 +3352,16 @@ local function OpenScriptHub()
             Description = Script.Description,
             Tab = "Home",
             Callback = function()
-                API:Notify({ Title = "🚀 Carregando", Description = "Executando " .. Script.Name .. "...", Type = "Info", Duration = 3 })
+                API:Notify({ Title = "idk", Description = "executed " .. Script.Name .. "...", Type = "Info", Duration = 3 })
                 pcall(function() loadstring(Script.LoadString)() end)
             end,
         })
     end
     
-    Window:AddSection({ Title = "ℹ️ INFORMAÇÕES", Tab = "Home" })
+    Window:AddSection({ Title = "Info", Tab = "Home" })
     Window:AddParagraph({
-        Title = "MNAHub Script Hub",
-        Description = "Total de scripts: " .. #ScriptHub .. "\n🔗 Discord: discord.gg/MNAHub",
+        Title = "Leaf Cmd",
+        Description = "Total: " .. #ScriptHub .. "\n",
         Tab = "Home",
     })
 end
@@ -3371,7 +3369,7 @@ end
 -- COMANDO scripts (ABRE A ABA)
 Command.Add({
     Aliases = { "scripts", "hub" },
-    Description = "Abre o MNAHub Script Hub com vários scripts prontos",
+    Description = "hub yk yeah",
     Arguments = {},
     Task = function()
         OpenScriptHub()
@@ -3381,16 +3379,16 @@ Command.Add({
 -- COMANDO exec (roda script direto)
 Command.Add({
     Aliases = { "exec" },
-    Description = "Executa um script (ex: ;exec solara)",
+    Description = "Executes Script (ex: ;exec solara)",
     Arguments = { { Name = "nome", Type = "String" } },
     Task = function(Nome)
         for _, Script in ipairs(ScriptHub) do
             if string.lower(Script.Name):find(string.lower(Nome)) then
                 pcall(function() loadstring(Script.LoadString)() end)
-                return "✅ Executado", Script.Name
+                return "executed", Script.Name
             end
         end
-        return "❌ Erro", "Script não encontrado! Use ;scripts"
+        return "Error", "ERROR"
     end,
 })
 
@@ -3425,12 +3423,12 @@ Command.Add({
         local Window = Library:CreateWindow({ Title = "EMOTE LIST" })
         
         Window:AddParagraph({
-            Title = "📋 HOW TO USE",
+            Title = "HOW TO USE",
             Description = "Type in cmd: emote [ID]\nExample: emote 104131847054135\n\nClick any button below to copy the ID!",
             Tab = "Home",
         })
         
-        Window:AddSection({ Title = "🎭 AVAILABLE EMOTES", Tab = "Home" })
+        Window:AddSection({ Title = " EMOTES IDS", Tab = "Home" })
         
         for _, Emote in ipairs(Emotes) do
             Window:AddButton({
@@ -3440,7 +3438,7 @@ Command.Add({
                 Callback = function()
                     setclipboard(Emote.Id)
                     API:Notify({
-                        Title = "📋 ID COPIED!",
+                        Title = "ID COPIED!",
                         Description = "Now type in cmd: emote " .. Emote.Id,
                         Type = "Success",
                         Duration = 3,
@@ -3464,18 +3462,18 @@ Command.Add({
 		else
 			local Keybinds = {}
 			local Window = Library:CreateWindow({
-				Title = "MNAHub Settings",
+				Title = "Leaf Settings",
 			})
 
 			Window:AddTab({
 				Title = "About",
-				Description = "List of credits & information about MNAHub Cmd",
+				Description = "List of credits & information about Leaf Cmd",
 				Tab = "Home",
 			})
 
 			Window:AddTab({
 				Title = "Prefixes",
-				Description = "Change the prefixes of MNAHub Cmd",
+				Description = "Change the prefixes of Leaf Cmd",
 				Tab = "Home",
 			})
 
@@ -3515,7 +3513,7 @@ Command.Add({
 				Tab = "Home",
 			})
 
-			Window:AddSection({ Title = "MNAHub Cmd", Tab = "About" })
+			Window:AddSection({ Title = "Leaf Cmd", Tab = "About" })
 
 			Window:AddParagraph({
 				Title = "Prefix",
@@ -3543,13 +3541,13 @@ Command.Add({
 
 			Window:AddParagraph({
 				Title = "Command Count",
-				Description = Format("Currently MNAHub Cmd has %d commands", GetTableLength(Commands)),
+				Description = Format("Currently Leaf Cmd has %d commands", GetTableLength(Commands)),
 				Tab = "About",
 			})
 
 			Window:AddParagraph({
 				Title = "Discord",
-				Description = "https://discord.gg/MNAHub",
+				Description = "https://discord.gg/Leaf",
 				Tab = "About",
 			})
 
@@ -3597,7 +3595,7 @@ Command.Add({
 
 			Window:AddToggle({
 				Title = "Recommendation",
-				Description = "Toggle if MNAHub Cmd should recommend commands",
+				Description = "Toggle if Leaf Cmd should recommend commands",
 				Tab = "Toggles",
 				Default = Settings.Toggles.Recommendation,
 				Callback = function(Toggle)
@@ -5375,7 +5373,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "tutorial", "tut" },
-	Description = "A simple tutorial to showcase how MNAHub Cmd works",
+	Description = "A simple tutorial to showcase how Leaf Cmd works",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Tutorial"]
@@ -5390,14 +5388,14 @@ Command.Add({
 			local Tutorial = Features.Tutorial:Clone();
 			Tutorial.Visible = true
 			Tutorial.Parent = Window.Self.Tabs.Home.ScrollingFrame
-			Tutorial.Invite.Text = "https://discord.gg/r3bBmHqGy2"
+			Tutorial.Invite.Text = "https://discord.gg/leaf"
 		end
 	end,
 })
 
 Command.Add({
 	Aliases = { "cmds", "commands" },
-	Description = "Displays all the commands MNAHub Cmd has",
+	Description = "Displays all the commands Leaf Cmd has",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Commands"]
@@ -10721,7 +10719,7 @@ do
 			UI.Parent = nil
 			API:Notify({
 				Title = "Already loaded",
-				Description = "If you would like to reload MNAHub Cmd rejoin or enable Developer mode!",
+				Description = "If you would like to reload Leaf Cmd rejoin or enable Developer mode!",
 				Duration = 5,
 				Type = "Error",
 			})
@@ -10839,14 +10837,14 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome to MNAHub CMD (NEW UPDATE)",
+	Title = "Welcome to Leaf CMD (BETA APLHA)",
 	Description = Format(
-		"Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
+		"Leaf was Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
 		Settings.Version,
 		Settings.Prefix,
 		Settings.ChatPrefix,
-		"https://discord.gg/r3bBmHqGy2"
+		"https://discord.gg/leaf (still alpha)"
 	),
 	Duration = 15,
 	Type = "Info",
