@@ -82,10 +82,6 @@ Theme = ({
     Mode = "Dark",
     Transparency = 0.14,
 
-    Theme = ({
-    Mode = "Dark",
-    Transparency = 0,
-
     -- Frames - Red & Black Gradient Style
     Primary = Color3.fromRGB(15, 5, 5),          -- Hitam dengan tint merah (base)
     Secondary = Color3.fromRGB(40, 10, 10),      -- Dark red-black
@@ -104,7 +100,6 @@ Theme = ({
 
     -- Image/Icons
     Icon = Color3.fromRGB(255, 50, 50),           -- Bright red icons
-}),
 }),
 	
 	Toggles = ({
