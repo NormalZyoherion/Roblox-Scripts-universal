@@ -3359,7 +3359,7 @@ local function OpenScriptHub()
     
     Window:AddSection({ Title = "Info", Tab = "Home" })
     Window:AddParagraph({
-        Title = "CMDX Is a Powerful Admin Command Script",
+        Title = "Leaf CMD Is a Powerful Admin Command Script",
         Description = "Total scripts: " .. #ScriptHub .. "\nenjoy These Scripts",
         Tab = "Home",
     })
@@ -3461,18 +3461,18 @@ Command.Add({
 		else
 			local Keybinds = {}
 			local Window = Library:CreateWindow({
-				Title = "MNAHub Settings",
+				Title = "Leaf Settings",
 			})
 
 			Window:AddTab({
 				Title = "About",
-				Description = "List of credits & information about CmdX",
+				Description = "List of credits & information about Leaf CMD",
 				Tab = "Home",
 			})
 
 			Window:AddTab({
 				Title = "Prefixes",
-				Description = "Change the prefixes of Cmdx",
+				Description = "Change the prefixes of Leaf",
 				Tab = "Home",
 			})
 
@@ -3484,7 +3484,7 @@ Command.Add({
 
 			Window:AddTab({
 				Title = "Theme",
-				Description = "Customize the look of CmdX",
+				Description = "Customize the look of Leaf",
 				Tab = "Home",
 			})
 
@@ -3512,7 +3512,7 @@ Command.Add({
 				Tab = "Home",
 			})
 
-			Window:AddSection({ Title = "CmdX", Tab = "About" })
+			Window:AddSection({ Title = "LEAF", Tab = "About" })
 
 			Window:AddParagraph({
 				Title = "Prefix",
@@ -3540,13 +3540,13 @@ Command.Add({
 
 			Window:AddParagraph({
 				Title = "Command Count",
-				Description = Format("Currently CMDX has %d commands", GetTableLength(Commands)),
+				Description = Format("Currently Leaf has %d commands", GetTableLength(Commands)),
 				Tab = "About",
 			})
 
 			Window:AddParagraph({
 				Title = "Discord",
-				Description = "https://discord.gg/cmdszz",
+				Description = "https://dsc.gg/LeafWasHere",
 				Tab = "About",
 			})
 
@@ -3594,7 +3594,7 @@ Command.Add({
 
 			Window:AddToggle({
 				Title = "Recommendation",
-				Description = "Toggle if CmdX should recommend commands",
+				Description = "Toggle if Leaf should recommend commands",
 				Tab = "Toggles",
 				Default = Settings.Toggles.Recommendation,
 				Callback = function(Toggle)
@@ -4168,7 +4168,7 @@ local ESPSettings = {
 
 Command.Add({
 	Aliases = { "esp" },
-	Description = "See other players through walls",
+	Description = "See other players through walls (bulit in leaf esp)",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Esp"]
@@ -4616,7 +4616,7 @@ end
 
 Command.Add({
 	Aliases = { "aimbot", "ab" },
-	Description = "Aimbot features built into MNAHub Cmd",
+	Description = "Aimbot features built into Leaf Cmd",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs.Aimbot
@@ -5394,7 +5394,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "cmds", "commands" },
-	Description = "Displays all the commands CmdX has",
+	Description = "Displays all the commands Leaf Cmd has",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Commands"]
