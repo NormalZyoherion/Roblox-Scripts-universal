@@ -74,7 +74,7 @@ local Settings = ({
 
 	Theme = ({
     Mode = "Dark",
-    Transparency = 0.4,
+    Transparency = 0.13,
 
     -- Frames (Void - Hitam Dominan):
     Primary = Color3.fromRGB(10, 10, 15),        -- Fundo principal (hitam pekat)
