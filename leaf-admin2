@@ -80,26 +80,19 @@ local Settings = ({
 -- Leaf High Contrast Theme
 Theme = ({
     Mode = "Dark",
-    Transparency = 0,
+    Transparency = 0.14,
 
-    -- Frames
-    Primary = Color3.fromRGB(0, 0, 0),           -- PURE BLACK
-    Secondary = Color3.fromRGB(10, 20, 10),      -- Very dark green
-    Actions = Color3.fromRGB(34, 139, 34),       -- Forest Green
-    Component = Color3.fromRGB(5, 10, 5),        -- Near black
-    Highlight = Color3.fromRGB(255, 255, 255),     -- Spring Green
-    ScrollBar = Color3.fromRGB(20, 20, 20),      -- Dark gray
-
-    -- Text
-    Title = Color3.fromRGB(255, 255, 255),       -- PURE WHITE
-    Description = Color3.fromRGB(150, 150, 150), -- Medium gray
-
-    -- Outlines
-    Shadow = Color3.fromRGB(1, 1, 1),            -- Black
-    Outline = Color3.fromRGB(255, 205, 255),       -- Lime green
-
-    -- Image/Icons
-    Icon = Color3.fromRGB(255, 255, 255),        -- White
+    Primary = Color3.fromRGB(242, 242, 242),
+		Secondary = Color3.fromRGB(245, 245, 245),
+		Actions = Color3.fromRGB(225, 232, 238),
+		Component = Color3.fromRGB(0, 0, 0),
+		Highlight = Color3.fromRGB(153, 155, 255),
+		ScrollBar = Color3.fromRGB(0, 0, 0),
+		Title = Color3.fromRGB(40, 40, 40),
+		Description = Color3.fromRGB(155, 155, 155),
+		Shadow = Color3.fromRGB(0, 0, 0),
+		Outline = Color3.fromRGB(0, 0, 0),
+		Icon = Color3.fromRGB(40, 40, 40),
 }),
 	
 	Toggles = ({
@@ -119,7 +112,7 @@ Theme = ({
 	}),
 
 	Configs = ({}),
-	UIScale = 1,
+	UIScale = 0.95,
 })
 
 local Connect = (game.Loaded.Connect);
