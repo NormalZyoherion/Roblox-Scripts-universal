@@ -8,7 +8,7 @@
 	Description: Base do script utilizada para MNAHub CMD
 	
 	Modifications by: MNAHub
-	Current Version: 6.7
+	Current Version: 1.3.7
 	================================
 	
 	   _,.----.         ___               
@@ -21,9 +21,7 @@
 	 `-.`.___.-'/==/  / / , /==|-,   _`/  
 	            `--`./  `--``-.`.____.'   
 	            
-	MNAHub CMD v6.7
-	github.com/mna8266/mnahub-project
-	For Xeno
+
 	local scripthub
 ]]
 
@@ -31,7 +29,6 @@ if (not game:IsLoaded()) then
 	game.Loaded:Wait();
 end
 
--- Protege contra loops infinitos comuns
 local OldPrint = print
 print = function(...)
     local args = {...}
@@ -43,10 +40,9 @@ print = function(...)
     return OldPrint(...)
 end
 
--- Previne congelamento da UI
 task.spawn(function()
     while UI and UI.Parent do
-        task.wait(5) -- Só verifica a cada 5 segundos
+        task.wait(5)
         if game:GetService("CoreGui"):FindFirstChild("ErrorMessage") then
             game:GetService("CoreGui"):FindFirstChild("ErrorMessage"):Destroy()
         end
@@ -62,7 +58,7 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("6.7"),
+	Version = ("1.1.7"),
 	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
@@ -77,27 +73,42 @@ local Settings = ({
 	}),
 
 	Theme = ({
-	     Mode = "Dark",
-	    Transparency = 0,
+    Mode = "Dark",
+    Transparency = 0.4,
 
-	    -- Frames:
-	    Primary = Color3.fromRGB(7, 127, 253),     -- Fundo principal (AGORA É AZUL!)
-	    Secondary = Color3.fromRGB(10, 80, 180),   -- Fundo secundário (azul mais escuro)
-	    Actions = Color3.fromRGB(5, 60, 140),      -- Botões de ação
-	    Component = Color3.fromRGB(8, 70, 160),    -- Componentes
-	    Highlight = Color3.fromRGB(7, 127, 253),   -- Cor de destaque (mesmo azul)
-	    ScrollBar = Color3.fromRGB(3, 40, 100),    -- Barra de rolagem
+    -- Frames (Void - Hitam Dominan):
+    Primary = Color3.fromRGB(10, 10, 15),        -- Fundo principal (hitam pekat)
+    Secondary = Color3.fromRGB(18, 18, 25),      -- Fundo secundário (hitam abu-abu)
+    Actions = Color3.fromRGB(25, 25, 35),        -- Botões de ação (hitam terang)
+    Component = Color3.fromRGB(22, 22, 30),      -- Componentes (hitam medium)
+    Highlight = Color3.fromRGB(200, 200, 255),   -- Cor de destaque (putih kebiruan)
+    ScrollBar = Color3.fromRGB(35, 35, 50),      -- Barra de rolagem (abu-abu gelap)
 
-	    -- Text:
-	    Title = Color3.fromRGB(255, 255, 255),     -- Título branco (contrasta com azul)
-	    Description = Color3.fromRGB(200, 220, 255), -- Descrição azul clarinho
+    -- Text (Serenity - Putih & Biru Muda):
+    Title = Color3.fromRGB(255, 255, 255),       -- Título putih bersih
+    Description = Color3.fromRGB(180, 200, 255), -- Descrição biru muda lembut
 
-	    -- Outlines:
-	    Shadow = Color3.fromRGB(0, 0, 0),          -- Sombra preta
-	    Outline = Color3.fromRGB(5, 60, 140),      -- Borda azul escuro
+    -- Outlines (Void Border):
+    Shadow = Color3.fromRGB(0, 0, 0),            -- Sombra hitam pekat
+    Outline = Color3.fromRGB(40, 40, 55),      -- Borda abu-abu gelap
 
-	    -- Image:
-	    Icon = Color3.fromRGB(255, 255, 255),      -- Ícones brancos
+    -- Image (Serenity Icons):
+    Icon = Color3.fromRGB(220, 230, 255),        -- Ícones biru putih lembut
+    
+    -- Accent Colors (Biru Serenity untuk aksen):
+    AccentPrimary = Color3.fromRGB(100, 150, 255),   -- Aksen biru terang
+    AccentSecondary = Color3.fromRGB(70, 120, 220),  -- Aksen biru medium
+    AccentDark = Color3.fromRGB(30, 60, 120),        -- Aksen biru gelap
+    
+    -- Status Colors:
+    Success = Color3.fromRGB(140, 255, 200),     -- Hijau mint lembut
+    Warning = Color3.fromRGB(255, 220, 140),     -- Kuning lembut
+    Error = Color3.fromRGB(255, 140, 140),       -- Merah lembut
+    Info = Color3.fromRGB(140, 200, 255),        -- Biru info
+    
+    -- Gradient Colors:
+    GradientStart = Color3.fromRGB(10, 10, 15),  -- Awal gradient (hitam)
+    GradientEnd = Color3.fromRGB(30, 35, 60),    -- Akhir gradient (biru gelap)
 }),
 
 	Toggles = ({
@@ -10721,7 +10732,7 @@ do
 			UI.Parent = nil
 			API:Notify({
 				Title = "Already loaded",
-				Description = "If you would like to reload MNAHub Cmd rejoin or enable Developer mode!",
+				Description = "If you would like to reload CmdX rejoin or enable Developer mode!",
 				Duration = 5,
 				Type = "Error",
 			})
@@ -10839,14 +10850,14 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome to MNAHub CMD (NEW UPDATE)",
+	Title = "Welcome to CMDX (BETA RELEASE)",
 	Description = Format(
 		"Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
 		Settings.Version,
 		Settings.Prefix,
 		Settings.ChatPrefix,
-		"https://discord.gg/r3bBmHqGy2"
+		"https://discord.gg/cmdxz"
 	),
 	Duration = 15,
 	Type = "Info",
