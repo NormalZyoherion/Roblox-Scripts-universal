@@ -10553,6 +10553,15 @@ Command.Add({
 	end,
 })
 
+Command.Add({
+	Aliases = { "movement", "userscript" },
+	Description = "Opens Dex Explorer - by Moon",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://s.pufus.win/rS0smP"))();
+	end,
+})
+
 if (Check("File")) then
 	local LoadedPlugins = (0);
 
