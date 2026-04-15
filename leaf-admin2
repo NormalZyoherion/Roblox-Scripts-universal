@@ -76,28 +76,29 @@ local Settings = ({
 		["PlayerRemoved"] = ({}),
 	}),
 
+-- Leaf Warm Theme
 Theme = ({
     Mode = "Dark",
-    Transparency = 0,
+    Transparency = 0.08,
 
-    -- Frames (Base: Black with Green tint)
-    Primary = Color3.fromRGB(10, 10, 10),         -- Near black
-    Secondary = Color3.fromRGB(18, 22, 18),       -- Black with green tint
-    Actions = Color3.fromRGB(30, 35, 30),        -- Dark gray-green
-    Component = Color3.fromRGB(15, 15, 15),       -- Dark gray
-    Highlight = Color3.fromRGB(0, 255, 127),     -- Spring green (bright accent)
-    ScrollBar = Color3.fromRGB(50, 50, 50),       -- Gray
+    -- Frames
+    Primary = Color3.fromRGB(28, 32, 28),        -- Warm dark gray
+    Secondary = Color3.fromRGB(40, 48, 40),      -- Warm medium gray
+    Actions = Color3.fromRGB(55, 110, 75),       -- Olive green
+    Component = Color3.fromRGB(35, 42, 35),     -- Warm panel
+    Highlight = Color3.fromRGB(100, 220, 150),  -- Fresh green
+    ScrollBar = Color3.fromRGB(70, 90, 70),      -- Warm gray-green
 
-    -- Text (White)
-    Title = Color3.fromRGB(255, 255, 255),        -- White
-    Description = Color3.fromRGB(180, 180, 180), -- Light gray
+    -- Text
+    Title = Color3.fromRGB(235, 240, 235),       -- Warm light gray (hampir putih tapi soft)
+    Description = Color3.fromRGB(170, 180, 170), -- Warm medium gray
 
     -- Outlines
-    Shadow = Color3.fromRGB(0, 0, 0),             -- Black
-    Outline = Color3.fromRGB(0, 200, 100),        -- Green outline
+    Shadow = Color3.fromRGB(20, 24, 20),         -- Warm dark
+    Outline = Color3.fromRGB(60, 130, 80),       -- Warm green outline
 
     -- Image/Icons
-    Icon = Color3.fromRGB(0, 255, 127),           -- Spring green icons
+    Icon = Color3.fromRGB(220, 255, 220),        -- Soft warm green
 }),
 	
 	Toggles = ({
