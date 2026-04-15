@@ -58,8 +58,8 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("1.0.1"),
-	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
+	Version = ("1.0.2"),
+	CustomUI = (Cmd().CustomUI or "rbxassetid://106692788979303"),
 
 	Aliases = ({}),
 	Waypoints = ({}),
@@ -73,28 +73,29 @@ local Settings = ({
 	}),
 
 	-- ignore dark bc uhh idk lazy	
+-- Leaf Minimal Theme (Black, White, Green Accent)
 Theme = ({
     Mode = "Dark",
     Transparency = 0.12,
 
-    -- uhh color?
-    Primary = Color3.fromRGB(10, 10, 10),        -- Hitam pekat
-    Secondary = Color3.fromRGB(20, 20, 20),      -- Hitam sedikit terang
-    Actions = Color3.fromRGB(30, 30, 30),        -- Abu-abu gelap
-    Component = Color3.fromRGB(25, 25, 25),      -- Abu-abu komponen
-    Highlight = Color3.fromRGB(255, 255, 255),   -- PUTIH (highlight)
-    ScrollBar = Color3.fromRGB(40, 40, 40),      -- Scrollbar abu
+    -- Frames (Base: Black with Green tint)
+    Primary = Color3.fromRGB(10, 10, 10),         -- Near black
+    Secondary = Color3.fromRGB(18, 22, 18),       -- Black with green tint
+    Actions = Color3.fromRGB(30, 35, 30),        -- Dark gray-green
+    Component = Color3.fromRGB(15, 15, 15),       -- Dark gray
+    Highlight = Color3.fromRGB(0, 255, 127),     -- Spring green (bright accent)
+    ScrollBar = Color3.fromRGB(50, 50, 50),       -- Gray
 
-    -- yes never used ts
-    Title = Color3.fromRGB(255, 255, 255),       -- Putih
-    Description = Color3.fromRGB(200, 200, 200), -- Abu-abu terang
+    -- Text (White)
+    Title = Color3.fromRGB(255, 255, 255),        -- White
+    Description = Color3.fromRGB(180, 180, 180), -- Light gray
 
     -- Outlines
-    Shadow = Color3.fromRGB(0, 0, 0),            -- Hitam murni
-    Outline = Color3.fromRGB(50, 50, 50),        -- Outline abu
+    Shadow = Color3.fromRGB(0, 0, 0),             -- Black
+    Outline = Color3.fromRGB(0, 200, 100),        -- Green outline
 
-    -- Icon
-    Icon = Color3.fromRGB(255, 255, 255),        -- Icon putih
+    -- Image/Icons
+    Icon = Color3.fromRGB(0, 255, 127),           -- Spring green icons
 }),
 
 
