@@ -77,28 +77,29 @@ local Settings = ({
 	}),
 
 -- Leaf Warm Theme
+-- Leaf High Contrast Theme
 Theme = ({
     Mode = "Dark",
-    Transparency = 0.08,
+    Transparency = 0,
 
     -- Frames
-    Primary = Color3.fromRGB(28, 32, 28),        -- Warm dark gray
-    Secondary = Color3.fromRGB(40, 48, 40),      -- Warm medium gray
-    Actions = Color3.fromRGB(55, 110, 75),       -- Olive green
-    Component = Color3.fromRGB(35, 42, 35),     -- Warm panel
-    Highlight = Color3.fromRGB(100, 220, 150),  -- Fresh green
-    ScrollBar = Color3.fromRGB(70, 90, 70),      -- Warm gray-green
+    Primary = Color3.fromRGB(0, 0, 0),           -- PURE BLACK
+    Secondary = Color3.fromRGB(10, 20, 10),      -- Very dark green
+    Actions = Color3.fromRGB(34, 139, 34),       -- Forest Green
+    Component = Color3.fromRGB(5, 10, 5),        -- Near black
+    Highlight = Color3.fromRGB(255, 255, 255),     -- Spring Green
+    ScrollBar = Color3.fromRGB(20, 20, 20),      -- Dark gray
 
     -- Text
-    Title = Color3.fromRGB(235, 240, 235),       -- Warm light gray (hampir putih tapi soft)
-    Description = Color3.fromRGB(170, 180, 170), -- Warm medium gray
+    Title = Color3.fromRGB(255, 255, 255),       -- PURE WHITE
+    Description = Color3.fromRGB(150, 150, 150), -- Medium gray
 
     -- Outlines
-    Shadow = Color3.fromRGB(20, 24, 20),         -- Warm dark
-    Outline = Color3.fromRGB(60, 130, 80),       -- Warm green outline
+    Shadow = Color3.fromRGB(1, 1, 1),            -- Black
+    Outline = Color3.fromRGB(255, 205, 255),       -- Lime green
 
     -- Image/Icons
-    Icon = Color3.fromRGB(220, 255, 220),        -- Soft warm green
+    Icon = Color3.fromRGB(255, 255, 255),        -- White
 }),
 	
 	Toggles = ({
