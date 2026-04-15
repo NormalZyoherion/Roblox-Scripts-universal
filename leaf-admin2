@@ -88,11 +88,11 @@ Theme = ({
 		Component = Color3.fromRGB(0, 0, 0),
 		Highlight = Color3.fromRGB(153, 155, 255),
 		ScrollBar = Color3.fromRGB(0, 0, 0),
-		Title = Color3.fromRGB(40, 40, 40),
-		Description = Color3.fromRGB(155, 155, 155),
+		Title = Color3.fromRGB(255, 255, 255),
+		Description = Color3.fromRGB(0, 0, 0),
 		Shadow = Color3.fromRGB(0, 0, 0),
 		Outline = Color3.fromRGB(0, 0, 0),
-		Icon = Color3.fromRGB(40, 40, 40),
+		Icon = Color3.fromRGB(0, 0, 0),
 }),
 	
 	Toggles = ({
