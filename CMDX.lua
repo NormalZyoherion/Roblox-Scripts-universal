@@ -58,7 +58,7 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("1.1.7"),
+	Version = ("1.0.1"),
 	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
@@ -72,44 +72,31 @@ local Settings = ({
 		["PlayerRemoved"] = ({}),
 	}),
 
-	Theme = ({
+	-- ignore dark bc uhh idk lazy	
+Theme = ({
     Mode = "Dark",
-    Transparency = 0.13,
+    Transparency = 0.12,
 
-    -- Frames (Void - Hitam Dominan):
-    Primary = Color3.fromRGB(10, 10, 15),        -- Fundo principal (hitam pekat)
-    Secondary = Color3.fromRGB(18, 18, 25),      -- Fundo secundário (hitam abu-abu)
-    Actions = Color3.fromRGB(25, 25, 35),        -- Botões de ação (hitam terang)
-    Component = Color3.fromRGB(22, 22, 30),      -- Componentes (hitam medium)
-    Highlight = Color3.fromRGB(200, 200, 255),   -- Cor de destaque (putih kebiruan)
-    ScrollBar = Color3.fromRGB(35, 35, 50),      -- Barra de rolagem (abu-abu gelap)
+    -- uhh color?
+    Primary = Color3.fromRGB(10, 10, 10),        -- Hitam pekat
+    Secondary = Color3.fromRGB(20, 20, 20),      -- Hitam sedikit terang
+    Actions = Color3.fromRGB(30, 30, 30),        -- Abu-abu gelap
+    Component = Color3.fromRGB(25, 25, 25),      -- Abu-abu komponen
+    Highlight = Color3.fromRGB(255, 255, 255),   -- PUTIH (highlight)
+    ScrollBar = Color3.fromRGB(40, 40, 40),      -- Scrollbar abu
 
-    -- Text (Serenity - Putih & Biru Muda):
-    Title = Color3.fromRGB(255, 255, 255),       -- Título putih bersih
-    Description = Color3.fromRGB(180, 200, 255), -- Descrição biru muda lembut
+    -- yes never used ts
+    Title = Color3.fromRGB(255, 255, 255),       -- Putih
+    Description = Color3.fromRGB(200, 200, 200), -- Abu-abu terang
 
-    -- Outlines (Void Border):
-    Shadow = Color3.fromRGB(0, 0, 0),            -- Sombra hitam pekat
-    Outline = Color3.fromRGB(40, 40, 55),      -- Borda abu-abu gelap
+    -- Outlines
+    Shadow = Color3.fromRGB(0, 0, 0),            -- Hitam murni
+    Outline = Color3.fromRGB(50, 50, 50),        -- Outline abu
 
-    -- Image (Serenity Icons):
-    Icon = Color3.fromRGB(220, 230, 255),        -- Ícones biru putih lembut
-    
-    -- Accent Colors (Biru Serenity untuk aksen):
-    AccentPrimary = Color3.fromRGB(100, 150, 255),   -- Aksen biru terang
-    AccentSecondary = Color3.fromRGB(70, 120, 220),  -- Aksen biru medium
-    AccentDark = Color3.fromRGB(30, 60, 120),        -- Aksen biru gelap
-    
-    -- Status Colors:
-    Success = Color3.fromRGB(140, 255, 200),     -- Hijau mint lembut
-    Warning = Color3.fromRGB(255, 220, 140),     -- Kuning lembut
-    Error = Color3.fromRGB(255, 140, 140),       -- Merah lembut
-    Info = Color3.fromRGB(140, 200, 255),        -- Biru info
-    
-    -- Gradient Colors:
-    GradientStart = Color3.fromRGB(10, 10, 15),  -- Awal gradient (hitam)
-    GradientEnd = Color3.fromRGB(30, 35, 60),    -- Akhir gradient (biru gelap)
+    -- Icon
+    Icon = Color3.fromRGB(255, 255, 255),        -- Icon putih
 }),
+
 
 	Toggles = ({
 		FillCap = true,
@@ -10569,280 +10556,8 @@ Command.Add({
 		loadstring(game:HttpGet("https://s.pufus.win/PzYzRO"))();
 	end,
 })
-
--- ============================================
--- VERSI 2: COMMAND.ADD FORMAT (Copy-Paste ke MNAHub)
--- ============================================
-
-Command.Add({
-    Aliases = { "movement2", "movegui", "speedgui" },
-    Description = "Opens Movement Control GUI with WalkSpeed, JumpPower, Gravity, and CFrame Speed",
-    Arguments = {},
-    Task = function()
-        local Tab = Library.Tabs["Movement"]
-        
-        if Tab then
-            Tab.Open()
-        else
-            -- Services
-            local Players = game:GetService("Players")
-            local RunService = game:GetService("RunService")
-            local UserInputService = game:GetService("UserInputService")
-            local Workspace = game:GetService("Workspace")
+   
             
-            local player = Players.LocalPlayer
-            
-            -- Saved Values (loop system)
-            local savedValues = {
-                walkSpeed = 16,
-                jumpPower = 50,
-                gravity = 196.2,
-                cframeWalkSpeed = 5,
-                cframeRunSpeed = 20,
-                cframeEnabled = false
-            }
-            
-            -- CFrame State
-            local currentCframeSpeed = savedValues.cframeWalkSpeed
-            local running = false
-            
-            -- Get Character Functions
-            local function getHumanoid()
-                local char = player.Character
-                if char then
-                    return char:FindFirstChildOfClass("Humanoid")
-                end
-                return nil
-            end
-            
-            local function getHRP()
-                local char = player.Character
-                if char then
-                    return char:FindFirstChild("HumanoidRootPart")
-                end
-                return nil
-            end
-            
-            -- Apply Saved Values
-            local function applySavedValues()
-                local humanoid = getHumanoid()
-                if humanoid then
-                    humanoid.WalkSpeed = savedValues.walkSpeed
-                    humanoid.JumpPower = savedValues.jumpPower
-                end
-                Workspace.Gravity = savedValues.gravity
-            end
-            
-            -- Create Window
-            local Window = Library:CreateWindow({
-                Title = "Movement Control"
-            })
-            
-            -- Add Tabs
-            Window:AddTab({
-                Title = "Character",
-                Description = "Character movement settings",
-                Tab = "Home"
-            })
-            
-            Window:AddTab({
-                Title = "CFrame",
-                Description = "CFrame teleport speed",
-                Tab = "Home"
-            })
-            
-            -- CHARACTER TAB
-            Window:AddSection({ Title = "Character Stats", Tab = "Character" })
-            
-            -- WalkSpeed
-            Window:AddSlider({
-                Title = "Walk Speed",
-                Tab = "Character",
-                MaxValue = 200,
-                Default = savedValues.walkSpeed,
-                Callback = function(v)
-                    savedValues.walkSpeed = v
-                    local humanoid = getHumanoid()
-                    if humanoid then humanoid.WalkSpeed = v end
-                end,
-            })
-            
-            Window:AddInput({
-                Title = "Walk Speed Input",
-                Tab = "Character",
-                Callback = function(v)
-                    local num = tonumber(v)
-                    if num then
-                        num = math.clamp(num, 1, 200)
-                        savedValues.walkSpeed = num
-                        local humanoid = getHumanoid()
-                        if humanoid then humanoid.WalkSpeed = num end
-                    end
-                end,
-            })
-            
-            -- JumpPower
-            Window:AddSlider({
-                Title = "Jump Power",
-                Tab = "Character",
-                MaxValue = 200,
-                Default = savedValues.jumpPower,
-                Callback = function(v)
-                    savedValues.jumpPower = v
-                    local humanoid = getHumanoid()
-                    if humanoid then humanoid.JumpPower = v end
-                end,
-            })
-            
-            Window:AddInput({
-                Title = "Jump Power Input",
-                Tab = "Character",
-                Callback = function(v)
-                    local num = tonumber(v)
-                    if num then
-                        num = math.clamp(num, 1, 200)
-                        savedValues.jumpPower = num
-                        local humanoid = getHumanoid()
-                        if humanoid then humanoid.JumpPower = num end
-                    end
-                end,
-            })
-            
-            -- Gravity
-            Window:AddSlider({
-                Title = "Gravity",
-                Tab = "Character",
-                MaxValue = 500,
-                Default = savedValues.gravity,
-                Callback = function(v)
-                    savedValues.gravity = v
-                    Workspace.Gravity = v
-                end,
-            })
-            
-            Window:AddInput({
-                Title = "Gravity Input",
-                Tab = "Character",
-                Callback = function(v)
-                    local num = tonumber(v)
-                    if num then
-                        num = math.clamp(num, 0, 500)
-                        savedValues.gravity = num
-                        Workspace.Gravity = num
-                    end
-                end,
-            })
-            
-            -- CFRAME TAB
-            Window:AddSection({ Title = "CFrame Speed", Tab = "CFrame" })
-            
-            Window:AddSlider({
-                Title = "CFrame Walk Speed",
-                Tab = "CFrame",
-                MaxValue = 100,
-                Default = savedValues.cframeWalkSpeed,
-                Callback = function(v)
-                    savedValues.cframeWalkSpeed = v
-                    if not running then currentCframeSpeed = v end
-                end,
-            })
-            
-            Window:AddSlider({
-                Title = "CFrame Run Speed",
-                Tab = "CFrame",
-                MaxValue = 200,
-                Default = savedValues.cframeRunSpeed,
-                Callback = function(v)
-                    savedValues.cframeRunSpeed = v
-                    if running then currentCframeSpeed = v end
-                end,
-            })
-            
-            Window:AddToggle({
-                Title = "Enable CFrame Speed",
-                Tab = "CFrame",
-                Default = savedValues.cframeEnabled,
-                Callback = function(v)
-                    savedValues.cframeEnabled = v
-                end,
-            })
-            
-            Window:AddParagraph({
-                Title = "Controls",
-                Description = "Hold LeftShift to sprint\nWASD to move",
-                Tab = "CFrame"
-            })
-            
-            -- RESET BUTTON
-            Window:AddSection({ Title = "Reset", Tab = "Character" })
-            
-            Window:AddButton({
-                Title = "Reset All to Default",
-                Tab = "Character",
-                Callback = function()
-                    savedValues.walkSpeed = 16
-                    savedValues.jumpPower = 50
-                    savedValues.gravity = 196.2
-                    savedValues.cframeWalkSpeed = 5
-                    savedValues.cframeRunSpeed = 20
-                    savedValues.cframeEnabled = false
-                    
-                    applySavedValues()
-                    currentCframeSpeed = savedValues.cframeWalkSpeed
-                    running = false
-                    
-                    API:Notify({
-                        Title = "Reset",
-                        Description = "All values reset to default!",
-                        Type = "Success"
-                    })
-                end,
-            })
-            
-            -- INPUT HANDLING
-            UserInputService.InputBegan:Connect(function(input, gpe)
-                if gpe then return end
-                if input.KeyCode == Enum.KeyCode.LeftShift then
-                    running = true
-                    currentCframeSpeed = savedValues.cframeRunSpeed
-                end
-            end)
-            
-            UserInputService.InputEnded:Connect(function(input, gpe)
-                if input.KeyCode == Enum.KeyCode.LeftShift then
-                    running = false
-                    currentCframeSpeed = savedValues.cframeWalkSpeed
-                end
-            end)
-            
-            -- CFRAME LOOP
-            RunService.RenderStepped:Connect(function(dt)
-                if savedValues.cframeEnabled then
-                    local humanoid = getHumanoid()
-                    local hrp = getHRP()
-                    if humanoid and hrp then
-                        local moveDir = humanoid.MoveDirection
-                        if moveDir.Magnitude > 0 then
-                            hrp.CFrame = hrp.CFrame + (moveDir * currentCframeSpeed * dt)
-                        end
-                    end
-                end
-            end)
-            
-            -- RESPAWN HANDLER
-            player.CharacterAdded:Connect(function(newChar)
-                task.wait(0.1)
-                local newHumanoid = newChar:WaitForChild("Humanoid")
-                newHumanoid.WalkSpeed = savedValues.walkSpeed
-                newHumanoid.JumpPower = savedValues.jumpPower
-            end)
-            
-            applySavedValues()
-            
-            return "Movement GUI", "Movement control GUI opened!"
-        end
-    end,
-})
 
 if (Check("File")) then
 	local LoadedPlugins = (0);
@@ -11141,14 +10856,14 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome to CMDX (BETA RELEASE)",
+	Title = "Welcome to Leaf Admin (RELEASE)",
 	Description = Format(
-		"Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
+		"Leaf Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
 		Settings.Version,
 		Settings.Prefix,
 		Settings.ChatPrefix,
-		"https://discord.gg/cmdxz"
+		"https://discord.gg/leafwtf"
 	),
 	Duration = 15,
 	Type = "Info",
