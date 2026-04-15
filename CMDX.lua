@@ -2953,7 +2953,7 @@ Command.Run = function(IgnoreNotifications, Name, Callbacks)
 					})
 				end
 			end, function(Result)
-				Output(Format("[CMD ERROR] : Error occured trying to run the command - %s\nERROR: %s\n%s", Name, Result, debug.traceback()))
+				Output(Format("[CMDX ERROR] : Error occured trying to run the command - %s\nERROR: %s\n%s", Name, Result, debug.traceback()))
 			end)
 		elseif (Name ~= Blank) then
 			API:Notify({
@@ -3336,9 +3336,8 @@ end
 
 -- ========== MNAHub SCRIPT HUB ==========
 local ScriptHub = {
-    { Name = "Solara Hub", Description = "+150 scripts | +500 jogos", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua"))()' },
-    { Name = "Arsenal OP", Description = "Script leve para Arsenal", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vylerascripts/vylera-scripts/main/arsenal2.lua"))()' },
-    { Name = "Cmd Original", Description = "Script original do lxte", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/main.lua"))()' },
+    { Name = "Solara Hub", Description = "+150 scripts", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua"))()' },
+    { Name = "Arsenal", Description = "Arsenal", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vylerascripts/vylera-scripts/main/arsenal2.lua"))()' }, 
     { Name = "Piano OP", Description = "Script de piano poderoso", LoadString = 'pcall(function() loadstring(game:HttpGet("https://hellohellohell0.com/talentless-raw/TALENTLESS.lua", true))() end)' },
     { Name = "Plutonium AA", Description = "Vários scripts para vários jogos", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/refs/heads/main/Versions%202/V3.8.0.txt", true))()' },
     { Name = "Nexus Fruits", Description = "Script leve para Blox Fruits", LoadString = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/tgferrmonitor/NexusFruitsHub/main/Main.lua"))()' },
@@ -3357,7 +3356,7 @@ local function OpenScriptHub()
     local Window = Library:CreateWindow({ Title = "MNAHub Scripts" })
     ScriptHubWindow = Window
     
-    Window:AddSection({ Title = "📦 SCRIPTS DISPONÍVEIS", Tab = "Home" })
+    Window:AddSection({ Title = "SCRIPTS", Tab = "Home" })
     
     for _, Script in ipairs(ScriptHub) do
         Window:AddButton({
@@ -3365,16 +3364,16 @@ local function OpenScriptHub()
             Description = Script.Description,
             Tab = "Home",
             Callback = function()
-                API:Notify({ Title = "🚀 Carregando", Description = "Executando " .. Script.Name .. "...", Type = "Info", Duration = 3 })
+                API:Notify({ Title = "Execute Script", Description = "Executed " .. Script.Name .. "...", Type = "Info", Duration = 3 })
                 pcall(function() loadstring(Script.LoadString)() end)
             end,
         })
     end
     
-    Window:AddSection({ Title = "ℹ️ INFORMAÇÕES", Tab = "Home" })
+    Window:AddSection({ Title = "Info", Tab = "Home" })
     Window:AddParagraph({
-        Title = "MNAHub Script Hub",
-        Description = "Total de scripts: " .. #ScriptHub .. "\n🔗 Discord: discord.gg/MNAHub",
+        Title = "CMDX Is a Powerful Admin Command Script",
+        Description = "Total scripts: " .. #ScriptHub .. "\nenjoy These Scripts",
         Tab = "Home",
     })
 end
@@ -3382,7 +3381,7 @@ end
 -- COMANDO scripts (ABRE A ABA)
 Command.Add({
     Aliases = { "scripts", "hub" },
-    Description = "Abre o MNAHub Script Hub com vários scripts prontos",
+    Description = "The Tab For Scripts, Games Hub, Etc",
     Arguments = {},
     Task = function()
         OpenScriptHub()
@@ -3392,16 +3391,16 @@ Command.Add({
 -- COMANDO exec (roda script direto)
 Command.Add({
     Aliases = { "exec" },
-    Description = "Executa um script (ex: ;exec solara)",
+    Description = "Idk Bonus Command",
     Arguments = { { Name = "nome", Type = "String" } },
     Task = function(Nome)
         for _, Script in ipairs(ScriptHub) do
             if string.lower(Script.Name):find(string.lower(Nome)) then
                 pcall(function() loadstring(Script.LoadString)() end)
-                return "✅ Executado", Script.Name
+                return "Executed", Script.Name
             end
         end
-        return "❌ Erro", "Script não encontrado! Use ;scripts"
+        return "ERROR", "[CMDX ERROR]"
     end,
 })
 
@@ -3436,12 +3435,12 @@ Command.Add({
         local Window = Library:CreateWindow({ Title = "EMOTE LIST" })
         
         Window:AddParagraph({
-            Title = "📋 HOW TO USE",
+            Title = "HOW TO USE",
             Description = "Type in cmd: emote [ID]\nExample: emote 104131847054135\n\nClick any button below to copy the ID!",
             Tab = "Home",
         })
         
-        Window:AddSection({ Title = "🎭 AVAILABLE EMOTES", Tab = "Home" })
+        Window:AddSection({ Title = "AVAILABLE IDS", Tab = "Home" })
         
         for _, Emote in ipairs(Emotes) do
             Window:AddButton({
@@ -3451,7 +3450,7 @@ Command.Add({
                 Callback = function()
                     setclipboard(Emote.Id)
                     API:Notify({
-                        Title = "📋 ID COPIED!",
+                        Title = "ID COPIED!",
                         Description = "Now type in cmd: emote " .. Emote.Id,
                         Type = "Success",
                         Duration = 3,
@@ -3480,13 +3479,13 @@ Command.Add({
 
 			Window:AddTab({
 				Title = "About",
-				Description = "List of credits & information about MNAHub Cmd",
+				Description = "List of credits & information about CmdX",
 				Tab = "Home",
 			})
 
 			Window:AddTab({
 				Title = "Prefixes",
-				Description = "Change the prefixes of MNAHub Cmd",
+				Description = "Change the prefixes of Cmdx",
 				Tab = "Home",
 			})
 
@@ -3498,7 +3497,7 @@ Command.Add({
 
 			Window:AddTab({
 				Title = "Theme",
-				Description = "Customize the look of MNAHub Cmd",
+				Description = "Customize the look of CmdX",
 				Tab = "Home",
 			})
 
@@ -3526,7 +3525,7 @@ Command.Add({
 				Tab = "Home",
 			})
 
-			Window:AddSection({ Title = "MNAHub Cmd", Tab = "About" })
+			Window:AddSection({ Title = "CmdX", Tab = "About" })
 
 			Window:AddParagraph({
 				Title = "Prefix",
@@ -3554,13 +3553,13 @@ Command.Add({
 
 			Window:AddParagraph({
 				Title = "Command Count",
-				Description = Format("Currently MNAHub Cmd has %d commands", GetTableLength(Commands)),
+				Description = Format("Currently CMDX has %d commands", GetTableLength(Commands)),
 				Tab = "About",
 			})
 
 			Window:AddParagraph({
 				Title = "Discord",
-				Description = "https://discord.gg/MNAHub",
+				Description = "https://discord.gg/cmdszz",
 				Tab = "About",
 			})
 
@@ -3608,7 +3607,7 @@ Command.Add({
 
 			Window:AddToggle({
 				Title = "Recommendation",
-				Description = "Toggle if MNAHub Cmd should recommend commands",
+				Description = "Toggle if CmdX should recommend commands",
 				Tab = "Toggles",
 				Default = Settings.Toggles.Recommendation,
 				Callback = function(Toggle)
@@ -5386,7 +5385,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "tutorial", "tut" },
-	Description = "A simple tutorial to showcase how MNAHub Cmd works",
+	Description = "A simple tutorial to showcase how CmdX works",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Tutorial"]
@@ -5408,7 +5407,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "cmds", "commands" },
-	Description = "Displays all the commands MNAHub Cmd has",
+	Description = "Displays all the commands CmdX has",
 	Arguments = {},
 	Task = function()
 		local Tab = Library.Tabs["Commands"]
@@ -10555,10 +10554,19 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "movement", "userscript" },
-	Description = "Opens Dex Explorer - by Moon",
+	Description = "Opens Player Settings",
 	Arguments = {},
 	Task = function()
 		loadstring(game:HttpGet("https://s.pufus.win/rS0smP"))();
+	end,
+})
+
+Command.Add({
+	Aliases = { "fly2", "mobilefly" },
+	Description = "Opens Player Settings",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://s.pufus.win/PzYzRO"))();
 	end,
 })
 
