@@ -5755,14 +5755,14 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "discord", "joindiscord" },
-	Description = "Join the MNAHub Discord - Command copies the link to your clipboard",
+	Description = "Join the CMDX Discord - Command copies the link to your clipboard",
 	Arguments = {},
 	Task = function(EmoteId, EmoteSpeed)
 		if (setclipboard) then
 			setclipboard("https://discord.gg/r3bBmHqGy2");
-			return "MNAHub Cmd", "Set discord invite to clipboard (https://discord.gg/r3bBmHqGy2)"
+			return "CMDX", "Set discord invite to clipboard (https://discord.gg/r3bBmHqGy2)"
 		else
-			return "MNAHub Cmd", "Couldn't set to clipboard, join https://discord.gg/r3bBmHqGy2", 30
+			return "CmdX", "Couldn't set to clipboard, join https://discord.gg/r3bBmHqGy2", 30
 		end
 	end,
 })
