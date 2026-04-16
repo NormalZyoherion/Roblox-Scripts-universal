@@ -62,7 +62,7 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("1.0.0"),
+	Version = ("1.0.9"),
 	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
@@ -10540,6 +10540,33 @@ Command.Add({
 
 		return "Clickfling", "Disabled"
 	end,
+})
+
+Command.Add({
+	Aliases = { "movement", "usersettings" },
+	Description = "Opens Movement Gui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/leaf-scripts/raw/main/p-obfuscated.lua.txt"))();
+	end,
+})
+
+Command.Add({
+	Aliases = { "invisible2", "invisgui" },
+	Description = "Opens Dex Explorer - by Moon",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/leaf-scripts/refs/heads/main/leaf2_invisible-obfuscated.lua.txt"))()
+   end,
+})
+
+Command.Add({
+	Aliases = { "wallhop", "hoponwall" },
+	Description = "Opens Dex Explorer - by Moon",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/leaf-scripts/refs/heads/main/leaf-wallhop.luau"))()
+      end,
 })
 
 if (Check("File")) then
