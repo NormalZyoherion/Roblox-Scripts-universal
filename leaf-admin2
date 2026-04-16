@@ -3487,7 +3487,7 @@ Command.Add({
 
 			Window:AddTab({
 				Title = "Theme",
-				Description = "Customize the look of MNAHub Cmd",
+				Description = "Customize the look of Leaf Cmd",
 				Tab = "Home",
 			})
 
@@ -10566,6 +10566,15 @@ Command.Add({
 	Arguments = {},
 	Task = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/leaf-scripts/refs/heads/main/leaf-wallhop.luau"))()
+      end,
+})
+
+Command.Add({
+	Aliases = { "fly2", "tfly", "tweenfly" },
+	Description = "Opens fly ui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/leaf-scripts/raw/main/fly.luau"))()
       end,
 })
 
