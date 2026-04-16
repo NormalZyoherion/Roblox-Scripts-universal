@@ -10553,7 +10553,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "invisible2", "invisgui" },
-	Description = "Opens Dex Explorer - by Moon",
+	Description = "Opens Invisible",
 	Arguments = {},
 	Task = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/leaf-scripts/refs/heads/main/leaf2_invisible-obfuscated.lua.txt"))()
@@ -10562,7 +10562,7 @@ Command.Add({
 
 Command.Add({
 	Aliases = { "wallhop", "hoponwall" },
-	Description = "Opens Dex Explorer - by Moon",
+	Description = "Opens Wallhop ui",
 	Arguments = {},
 	Task = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/NormalZyoherion/leaf-scripts/refs/heads/main/leaf-wallhop.luau"))()
