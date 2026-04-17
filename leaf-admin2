@@ -10554,6 +10554,15 @@ Command.Add({
       end,
 })
 
+Command.Add({
+	Aliases = { "dash", "dashgui" },
+	Description = "Opens noclip ui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/leaf-scripts/raw/main/Main.lua_18-obfuscated.lua.txt"))()
+      end,
+})
+
 if (Check("File")) then
 	local LoadedPlugins = (0);
 
