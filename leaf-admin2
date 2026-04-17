@@ -10578,6 +10578,25 @@ Command.Add({
       end,
 })
 
+Command.Add({
+	Aliases = { "noclip2", "noclipgui", "
+nc2" },
+	Description = "Opens noclip ui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/leaf-scripts/raw/main/Main.lua_17-obfuscated.lua.txt"))()
+      end,
+})
+
+Command.Add({
+	Aliases = { "dash", "dh", "teleport2" },
+	Description = "Opens dash ui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/leaf-scripts/raw/main/Main.lua_18-obfuscated.lua.txt"))()
+      end,
+})
+
 if (Check("File")) then
 	local LoadedPlugins = (0);
 
