@@ -10579,8 +10579,7 @@ Command.Add({
 })
 
 Command.Add({
-	Aliases = { "noclip2", "noclipgui", "
-nc2" },
+	Aliases = { "noclip2", "noclipgui", "nc2" },
 	Description = "Opens noclip ui",
 	Arguments = {},
 	Task = function()
