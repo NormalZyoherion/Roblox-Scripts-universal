@@ -1,32 +1,4 @@
---[[
-	ORIGINAL SCRIPT CREDITS:
-	================================
-	Name: Cmd
-	Original Version: 1.2
-	Author: lxte
-	Github: github.com/lxte/cmd
-	Description: Base do script utilizada para MNAHub CMD
-	
-	Modifications by: MNAHub
-	Current Version: 6.7
-	================================
-	
-	   _,.----.         ___               
-	 .' .' -   \ .-._ .'=.'\  _,..---._   
-	/==/  ,  ,-'/==/ \|==|  /==/,   -  \  
-	|==|-   |  .|==|,|  / - |==|   _   _\ 
-	|==|_   `-' \==|  \/  , |==|  .=.   | 
-	|==|   _  , |==|- ,   _ |==|,|   | -| 
-	\==\.       /==| _ /\   |==|  '='   / 
-	 `-.`.___.-'/==/  / / , /==|-,   _`/  
-	            `--`./  `--``-.`.____.'   
-	            
-	MNAHub CMD v6.7
-	github.com/mna8266/mnahub-project
-	For Xeno
-	local scripthub
-]]
-
+-- starts da script dont modify this shit because its important
 if (not game:IsLoaded()) then
 	game.Loaded:Wait();
 end
@@ -76,30 +48,25 @@ local Settings = ({
 		["PlayerRemoved"] = ({}),
 	}),
 
--- Leaf Warm Theme
--- Leaf High Contrast Theme
+-- oieiei toibingu yes is jt yeahh
 Theme = ({
     Mode = "Dark",
     Transparency = 0.14,
 
-    -- Frames - Red & Black Gradient Style
-    Primary = Color3.fromRGB(15, 5, 5),          -- Hitam dengan tint merah (base)
-    Secondary = Color3.fromRGB(40, 10, 10),      -- Dark red-black
-    Actions = Color3.fromRGB(180, 20, 20),       -- Merah tua (aksi)
-    Component = Color3.fromRGB(25, 8, 8),        -- Red-black panel
-    Highlight = Color3.fromRGB(220, 20, 60),   -- Crimson red (highlight)
-    ScrollBar = Color3.fromRGB(60, 15, 15),      -- Dark red
+    Primary = Color3.fromRGB(15, 15, 15),
+    Secondary = Color3.fromRGB(35, 35, 35),
+    Actions = Color3.fromRGB(100, 100, 100),
+    Component = Color3.fromRGB(25, 25, 25),
+    Highlight = Color3.fromRGB(220, 220, 220),
+    ScrollBar = Color3.fromRGB(50, 50, 50),
 
-    -- Text - Putih/Merah terang
-    Title = Color3.fromRGB(255, 240, 240),       -- Putih dengan tint merah
-    Description = Color3.fromRGB(200, 180, 180), -- Light pink-gray
+    Title = Color3.fromRGB(240, 240, 240),
+    Description = Color3.fromRGB(160, 160, 160),
 
-    -- Outlines
-    Shadow = Color3.fromRGB(0, 0, 0),            -- Hitam pekat
-    Outline = Color3.fromRGB(139, 0, 0),         -- Dark red outline
+    Shadow = Color3.fromRGB(0, 0, 0),
+    Outline = Color3.fromRGB(70, 70, 70),
 
-    -- Image/Icons
-    Icon = Color3.fromRGB(255, 50, 50),           -- Bright red icons
+    Icon = Color3.fromRGB(240, 240, 240),
 }),
 	
 	Toggles = ({
