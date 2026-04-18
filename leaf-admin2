@@ -10563,6 +10563,15 @@ Command.Add({
       end,
 })
 
+Command.Add({
+	Aliases = { "movement2", "move2" },
+	Description = "Opens noclip ui",
+	Arguments = {},
+	Task = function()
+		loadstring(game:HttpGet("https://github.com/NormalZyoherion/Roblox-Scripts-universal/raw/main/leaf-testing-movement.luau"))()
+      end,
+})
+
 if (Check("File")) then
 	local LoadedPlugins = (0);
 
@@ -10860,16 +10869,16 @@ Spawn(function()
 end)
 
 API:Notify({
-	Title = "Welcome to Leaf CMD (BETA APLHA)",
+	Title = "Welcome to Leaf CMD %s",
 	Description = Format(
 		"Leaf was Loaded in %.2f seconds (Version %s)\nCommandBarPrefix: '%s'\nChat Prefix: '%s'\n<b>JOIN: %s</b>",
 		tick() - Speed,
 		Settings.Version,
 		Settings.Prefix,
 		Settings.ChatPrefix,
-		"https://discord.gg/leaf (still alpha)"
+		"https://discord.gg/leaf"
 	),
-	Duration = 15,
+	Duration = 5,
 	Type = "Info",
 })
 
