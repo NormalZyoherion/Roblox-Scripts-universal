@@ -54,26 +54,20 @@ local Settings = ({
 -- Leaf High Contrast Theme
 Theme = ({
     Mode = "Dark",
-    Transparency = 0.14,
+    Transparency = 0.11,
 
-    -- Frames - Red & Black Gradient Style
-    Primary = Color3.fromRGB(15, 5, 5),          -- Hitam dengan tint merah (base)
-    Secondary = Color3.fromRGB(40, 10, 10),      -- Dark red-black
-    Actions = Color3.fromRGB(180, 20, 20),       -- Merah tua (aksi)
-    Component = Color3.fromRGB(25, 8, 8),        -- Red-black panel
-    Highlight = Color3.fromRGB(220, 20, 60),   -- Crimson red (highlight)
-    ScrollBar = Color3.fromRGB(60, 15, 15),      -- Dark red
-
-    -- Text - Putih/Merah terang
-    Title = Color3.fromRGB(255, 240, 240),       -- Putih dengan tint merah
-    Description = Color3.fromRGB(200, 180, 180), -- Light pink-gray
-
-    -- Outlines
-    Shadow = Color3.fromRGB(0, 0, 0),            -- Hitam pekat
-    Outline = Color3.fromRGB(139, 0, 0),         -- Dark red outline
-
-    -- Image/Icons
-    Icon = Color3.fromRGB(255, 50, 50),           -- Bright red icons
+    
+		Primary = Color3.fromRGB(15, 15, 15),
+		Secondary = Color3.fromRGB(20, 20, 20),
+		Actions = Color3.fromRGB(12, 16, 22),
+		Component = Color3.fromRGB(20, 20, 20),
+		Highlight = Color3.fromRGB(84, 132, 164),
+		ScrollBar = Color3.fromRGB(30, 30, 30),
+		Title = Color3.fromRGB(255, 255, 255),
+		Description = Color3.fromRGB(155, 155, 155),
+		Shadow = Color3.fromRGB(0, 0, 0),
+		Outline = Color3.fromRGB(25, 25, 25),
+		Icon = Color3.fromRGB(255, 255, 255)
 }),
 	
 	Toggles = ({
