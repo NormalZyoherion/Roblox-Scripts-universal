@@ -1,31 +1,5 @@
---[[
-	ORIGINAL SCRIPT CREDITS:
-	================================
-	Name: Cmd
-	Original Version: 1.2
-	Author: lxte
-	Github: github.com/lxte/cmd
-	Description: Base do script utilizada para MNAHub CMD
-	
-	Modifications by: MNAHub
-	Current Version: 6.7
-	================================
-	
-	   _,.----.         ___               
-	 .' .' -   \ .-._ .'=.'\  _,..---._   
-	/==/  ,  ,-'/==/ \|==|  /==/,   -  \  
-	|==|-   |  .|==|,|  / - |==|   _   _\ 
-	|==|_   `-' \==|  \/  , |==|  .=.   | 
-	|==|   _  , |==|- ,   _ |==|,|   | -| 
-	\==\.       /==| _ /\   |==|  '='   / 
-	 `-.`.___.-'/==/  / / , /==|-,   _`/  
-	            `--`./  `--``-.`.____.'   
-	            
-	MNAHub CMD v6.7
-	github.com/mna8266/mnahub-project
-	For Xeno
-	local scripthub
-]]
+-- DarkLeaf
+-- v1.1
 
 if (not game:IsLoaded()) then
 	game.Loaded:Wait();
@@ -62,7 +36,7 @@ local Settings = ({
 	Prefix = (";"),
 	ChatPrefix = ("!"),
 	Seperator = (","),
-	Version = ("1.0.9"),
+	Version = ("1.1"),
 	CustomUI = (Cmd().CustomUI or "rbxassetid://127095266446147"),
 
 	Aliases = ({}),
